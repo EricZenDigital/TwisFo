@@ -1,0 +1,16 @@
+<section id="texts">
+  <h4>This will only call 718-683-7332.</h4>
+  <h5>Text Here:</h5>
+  <pre>{{text |json}}</pre>
+  <form novalidate ng-submit="sendText()">
+    <!--To: <input ng-model="textM.to" type="number" ng-minlength="10"><br>-->
+    Message: <input ng-model="text.body" type="text"><br>
+    Attachment: <input ng-model="text.mediaUrl"><br>
+    <button class="btn btn-success" type="submit">Send Text</button>
+  </form>
+  <h5>Message Sent Result:</h5>
+  <pre>{{messageResult |json}}</pre>
+  <a ng-click="sendCall()" class="btn btn-info">Send a Call</a>
+  <h5>Call Sent Result:</h5>
+  <pre>{{callResult |json}}</pre>
+</section>

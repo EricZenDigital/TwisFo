@@ -1,0 +1,32 @@
+<section id="profile">
+  <pre>{{ user | json }}</pre>
+  <form novalidate name="userProfile" ng-submit="updateUser()">
+    <div class="row">
+      <input ng-model="user._id" readonly="readonly">
+    </div>
+    <div class="row">
+      <label>Username:</label><input ng-model="user.name">
+    </div>
+    <div class="row">
+      <label>E-mail:</label><input ng-model="user.email" type="email">
+    </div>
+    <div class="row">
+      <label>Phone Number:</label><input ng-model="user.phone.numberFull" type="number">
+    </div>
+    <div class="row">
+      <label>Password:</label><input ng-model="user.password" type="password">
+    </div>
+    <div class="row">
+      <label>Confirm Password:</label><input type="password">
+    </div>
+    <div class="row">
+      <label>Twitter Username:</label><input ng-model="user.twitter.username">
+    </div>
+    <br>
+    <div class="row">
+      <label>Should TwisFo notify you by texts?</label><input ng-disabled="!user.phone.numberFull" type="checkbox" ng-model="user.phone.canUse">
+    </div>
+    <br>
+    <button type="submit">Update Preferences</button>
+  </form>
+</section>
